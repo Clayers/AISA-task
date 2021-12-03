@@ -8,9 +8,14 @@ namespace CoffeeMaker
 {
     internal class Coffee
     {
-        public string name;
-        public int water;
-        public int coffeeBeans;
-        public int clean;
+        private string name;
+        private int water;
+        private int coffeeBeans;
+        private int clean;
+
+        public string Name { get => name; set => name = value; }
+        public int Water { get => water; set => water = value; }
+        public int CoffeeBeans { get => coffeeBeans; set => coffeeBeans = value; }
+        public int Clean { get => clean; set => clean = value; }
     }
 }

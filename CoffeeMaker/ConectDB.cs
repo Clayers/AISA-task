@@ -37,9 +37,9 @@ namespace CoffeeMaker
                     var command = new NpgsqlCommand();
                     command.Connection = Program.Connection;
                     //Таблица CoffeeSession
-                    command.CommandText = @"CREATE TABLE CoffeeSession(id SERIAL PRIMARY KEY, date_sesion DATE NOT NULL, typecoffee VARCHAR(50) NOT NULL, water INT NOT NULL, coffee INT NOT NULL, clean INT NOT NULL)";
+                    command.CommandText = @"CREATE TABLE CoffeeSession(id SERIAL PRIMARY KEY, date_session DATE NOT NULL, typecoffee VARCHAR(50) NOT NULL, water INT NOT NULL, coffee INT NOT NULL, clean INT NOT NULL)";
                     command.ExecuteNonQuery();
-                    command.CommandText = @"CREATE TABLE ConditionCoffeeMaker(id SERIAL PRIMARY KEY, date_sesion DATE NOT NULL, water INT NOT NULL, coffee INT NOT NULL, cleanness INT NOT NULL)";
+                    command.CommandText = @"CREATE TABLE ConditionCoffeeMaker(id SERIAL PRIMARY KEY, date_session DATE NOT NULL, water INT NOT NULL, coffee INT NOT NULL, cleanness INT NOT NULL)";
                     command.ExecuteNonQuery();
                     command.CommandText = @"CREATE TABLE UseCoffeeMaker(id SERIAL PRIMARY KEY, number_coffee_refills INT NOT NULL, number_water_refills INT NOT NULL, number_clean INT NOT NULL)";
                     command.ExecuteNonQuery();
@@ -68,16 +68,20 @@ namespace CoffeeMaker
         private void FillTestData()
         {
             UseCoffeeMakerController.AddEntryUseCoffeeMaker( new UseCoffeeMaker(0, 0, 0));
-            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSesions(new DateTime(2015, 7, 20), "espresso", 100,100,5));
-            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSesions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
-            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSesions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
-            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSesions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
-            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2015, 7, 20), 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100,100,5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2015, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2016, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2016, 7, 20), "espresso", 100, 100, 5));
+            CoffeeSessionsController.AddEntryUseCoffeeSessions(new CoffeeSessions(new DateTime(2019, 7, 20), "espresso", 100, 100, 5));
+            ConditionsCoffeeMakerController.AddEntryConditionsCoffeeMaker(new ConditionsCoffeeMarket(new DateTime(2016, 7, 20), 3000, 500, 100));
+
         }
 
     }

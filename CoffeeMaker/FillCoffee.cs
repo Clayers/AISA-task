@@ -8,20 +8,26 @@ namespace CoffeeMaker
 {
     internal class FillCoffee
     {
+        public List<Coffee> coffees;
         public FillCoffee()
         {
-        List<Coffee> coffees = new List<Coffee>();
+         coffees = new List<Coffee>();
             coffees.Add(NewCoffee("americano ",150,4,50));
             coffees.Add(NewCoffee("espresso",100,3,35));
             coffees.Add(NewCoffee("double espresso",200,6,70));
         }
-        public Coffee NewCoffee(string name, int water, int clean, int coffeeBeans)
+        public FillCoffee(List<Coffee> coffees)
+        {
+            this.coffees = new List<Coffee>();
+            this.coffees.AddRange(coffees);
+        }
+        private Coffee NewCoffee(string name, int water, int clean, int coffeeBeans)
         { 
         Coffee coffee = new Coffee();
-            coffee.name = name;
-            coffee.water = water;
-            coffee.clean = clean;   
-            coffee.coffeeBeans = coffeeBeans;   
+            coffee.Name = name;
+            coffee.Water = water;
+            coffee.Clean = clean;   
+            coffee.CoffeeBeans = coffeeBeans;   
             return coffee;
         }
     }

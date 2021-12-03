@@ -28,5 +28,29 @@ namespace CoffeeMaker
             }
             catch (Exception ex) { MessageBox.Show("Ошибка обновления использования кофемашины"); }
         }
+        public static UseCoffeeMaker GetDataUseCoffeeMaker()
+        {
+            var sql = $"SELECT * FROM UseCoffeeMaker WHERE id = '{1}'";
+            using (var command = new NpgsqlCommand(sql, Program.Connection))
+            {
+                int numberCoffeeRefills=0;
+                int numberWaterRefills=0;
+                int numberClean=0;
+                using (var reader = command.ExecuteReader())
+                    while (reader.Read())
+                    {
+
+                        numberCoffeeRefills = Int32.Parse(reader["number_coffee_refills"].ToString());
+                        numberWaterRefills = Int32.Parse(reader["number_water_refills"].ToString());
+                        numberClean = Int32.Parse(reader["number_clean"].ToString());
+
+                    }
+
+                UseCoffeeMaker useCoffeeMaker = new UseCoffeeMaker(numberCoffeeRefills, numberWaterRefills, numberClean);
+                return useCoffeeMaker;
+            }
+        }
+        
+
     }
 }

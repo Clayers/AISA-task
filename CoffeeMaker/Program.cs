@@ -19,9 +19,9 @@ namespace CoffeeMaker
         {
             ConectDB conectDB = new ConectDB();
             conectDB.Connect();
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }

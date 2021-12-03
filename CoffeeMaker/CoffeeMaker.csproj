@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coffee.cs" />
-    <Compile Include="CoffeeSesions.cs" />
+    <Compile Include="CoffeeSessions.cs" />
     <Compile Include="CoffeeSessionsController.cs" />
     <Compile Include="ConditionsCoffeeMakerController.cs" />
     <Compile Include="ConditionsCoffeeMarket.cs" />

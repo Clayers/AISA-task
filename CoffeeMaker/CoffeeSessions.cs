@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMaker
 {
-    internal class CoffeeSesions
+    internal class CoffeeSessions
     {
         private DateTime dateTime = new DateTime();
         private string typeCoffee;
@@ -14,7 +14,7 @@ namespace CoffeeMaker
         private int coffee;
         private int clean;
 
-        public CoffeeSesions(DateTime dateTime, string typeCoffee, int water, int coffee, int clean)
+        public CoffeeSessions(DateTime dateTime, string typeCoffee, int water, int coffee, int clean)
         {
             this.dateTime = dateTime;
             this.typeCoffee = typeCoffee;
