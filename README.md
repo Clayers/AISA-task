@@ -33,4 +33,9 @@
 * Состояние Кофе в Кофемашине
 ------------------------------------------------------
 ###### Демонстрация: ######
-[![Watch the video](https://drive.google.com/file/d/1c_1UMQQWzZnkroyxZjGWwskaLy1tQZpu/view?usp=sharing)
+
+
+https://user-images.githubusercontent.com/60391902/144719853-bad41261-ebc1-4ef5-88a9-b14e5c722f37.mp4
+
+![Coffee Maker](https://user-images.githubusercontent.com/60391902/144719959-80c2a167-2455-409d-87ac-149956738488.gif)
+
