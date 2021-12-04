@@ -9,7 +9,7 @@ namespace CoffeeMaker
 {
     internal class ConditionsCoffeeMakerController
     {
-        public static void AddEntryConditionsCoffeeMaker(ConditionsCoffeeMarket conditionsCoffeeMarket) //Метод добавления данных в таблицу CoffeeSession
+        public static void AddEntryConditionsCoffeeMaker(ConditionsCoffeeMarket conditionsCoffeeMarket) //Method for adding data to a table CoffeeSession
         {
             var sql = $"INSERT INTO ConditionCoffeeMaker(date_session, water, coffee, cleanness) VALUES('{conditionsCoffeeMarket.DateTime}',{conditionsCoffeeMarket.Water},'{conditionsCoffeeMarket.Coffee}','{conditionsCoffeeMarket.Cleanness}')";
             var cmds = new NpgsqlCommand(sql, Program.Connection);

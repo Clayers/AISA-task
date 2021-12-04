@@ -102,9 +102,9 @@ namespace CoffeeMaker
         }
         private void UpdatelabelWaterAll()
         {
-            if (CoffeeSessionsController.GetAllWaterCoffeeSessions() != 0)
+            if (CoffeeSessionsController.GetAllSumCoffeeSessions("water") != 0)
             {
-                labelWaterAllTime.Text = Convert.ToString("Total water spent: " + CoffeeSessionsController.GetAllWaterCoffeeSessions() + "ml");
+                labelWaterAllTime.Text = Convert.ToString("Total water spent: " + CoffeeSessionsController.GetAllSumCoffeeSessions("water") + "ml");
             }
             else
             {
@@ -113,9 +113,9 @@ namespace CoffeeMaker
         }
         private void UpdatelabelWaterMonth()
         {
-            if (CoffeeSessionsController.GetWaterThisMonthCoffeeSessions() != 0)
+            if (CoffeeSessionsController.GetAllSumThisMonthCoffeeSessions("water") != 0)
             {
-                labelWaterMonth.Text = Convert.ToString("Water spent in a month: " + CoffeeSessionsController.GetWaterThisMonthCoffeeSessions() + "ml");
+                labelWaterMonth.Text = Convert.ToString("Water spent in a month: " + CoffeeSessionsController.GetAllSumThisMonthCoffeeSessions("water") + "ml");
             }
             else
             {
@@ -124,9 +124,9 @@ namespace CoffeeMaker
         }
         private void UpdatelabelCoffeeBeansMonth()
         {
-            if (CoffeeSessionsController.GetCoffeeBeansThisMonthCoffeeSessions() != 0)
+            if (CoffeeSessionsController.GetAllSumThisMonthCoffeeSessions("coffee") != 0)
             {
-                labelCoffeeBeansMonth.Text = Convert.ToString("Coffee spent in a month: " + CoffeeSessionsController.GetCoffeeBeansThisMonthCoffeeSessions() + "g");
+                labelCoffeeBeansMonth.Text = Convert.ToString("Coffee spent in a month: " + CoffeeSessionsController.GetAllSumThisMonthCoffeeSessions("coffee") + "g");
             }
             else
             {
@@ -135,9 +135,9 @@ namespace CoffeeMaker
         }
         private void UpdatelabelCoffeeBeanseAll()
         {
-            if (CoffeeSessionsController.GetAllCoffeeBeansCoffeeSessions() != 0)
+            if (CoffeeSessionsController.GetAllSumCoffeeSessions("coffee") != 0)
             {
-                labelCoffeeBeansAllTime.Text = Convert.ToString("Coffee spent all the time: " + CoffeeSessionsController.GetAllCoffeeBeansCoffeeSessions() + "g");
+                labelCoffeeBeansAllTime.Text = Convert.ToString("Coffee spent all the time: " + CoffeeSessionsController.GetAllSumCoffeeSessions("coffee") + "g");
             }
             else
             {

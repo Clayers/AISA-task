@@ -15,10 +15,10 @@ namespace CoffeeMaker
             try
             {
                 if (chkDBExists(Program.ConnettionStringDB))
-                {  //Проверка наличия Базы Данных
-                    Program.Connection.Open(); //Открываем соединение
+                {  
+                    Program.Connection.Open(); 
                 }
-                else //Создание Базы Данных и таблиц
+                else 
                 {
                     Program.Connection = new NpgsqlConnection(Program.ConnectionString);
                     Program.Connection.Open();
@@ -33,14 +33,16 @@ namespace CoffeeMaker
                     Program.Connection = new NpgsqlConnection(Program.ConnettionStringDB);
                     Program.Connection.Open();
 
-                    //////Создание таблиц по умолчанию
+
                     var command = new NpgsqlCommand();
                     command.Connection = Program.Connection;
-                    //Таблица CoffeeSession
+                    //Create Table CoffeeSession
                     command.CommandText = @"CREATE TABLE CoffeeSession(id SERIAL PRIMARY KEY, date_session DATE NOT NULL, typecoffee VARCHAR(50) NOT NULL, water INT NOT NULL, coffee INT NOT NULL, clean INT NOT NULL)";
                     command.ExecuteNonQuery();
+                    //Create Table ConditionCoffeeMaker
                     command.CommandText = @"CREATE TABLE ConditionCoffeeMaker(id SERIAL PRIMARY KEY, date_session DATE NOT NULL, water INT NOT NULL, coffee INT NOT NULL, cleanness INT NOT NULL)";
                     command.ExecuteNonQuery();
+                    //Create Table UseCoffeeMaker
                     command.CommandText = @"CREATE TABLE UseCoffeeMaker(id SERIAL PRIMARY KEY, number_coffee_refills INT NOT NULL, number_water_refills INT NOT NULL, number_clean INT NOT NULL)";
                     command.ExecuteNonQuery();
 
@@ -49,11 +51,11 @@ namespace CoffeeMaker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Не удалось подключиться к PostgresDB. Проверте данные от сервера строку подключения к postgres"); return;
+                MessageBox.Show("Failed to connect to PostgresDB. Check the data from the server connection string to postgres"); return;
             }
 
         }
-        private bool chkDBExists(string connectionStr) //Проверка наличия Базы Данных
+        private bool chkDBExists(string connectionStr)
         {
             try
             {

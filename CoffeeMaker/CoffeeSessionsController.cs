@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoffeeMaker
 {
@@ -35,7 +36,7 @@ namespace CoffeeMaker
                 return conditions;
             }
         }
-        public static int GetAllCountCoffeeSessions()
+        public static int GetAllCountCoffeeSessions() // Ментод Получения всех сессий кофе
         {
             int Count=0;
             var sql = $"SELECT COUNT(*) FROM CoffeeSession";
@@ -52,7 +53,7 @@ namespace CoffeeMaker
                 return Count;
             }
         }
-        public static int GetCountThisMonthCoffeeSessions()
+        public static int GetCountThisMonthCoffeeSessions()// Ментод Получения сессий кофе за текущий месяц
         {
             int Count = 0;
             var sql = $"select COUNT(*) from CoffeeSession where date_part('month', date_session) = date_part('month', now())";
@@ -69,73 +70,54 @@ namespace CoffeeMaker
                 return Count;
             }
         }
-        public static int GetAllWaterCoffeeSessions()
+        public static int GetAllSumCoffeeSessions(string Data) // Ментод Получения потраченной воды и кофе за все время
         {
-            int AllWater = 0;
-            var sql = $"SELECT SUM(water)FROM CoffeeSession";
-            using (var command = new NpgsqlCommand(sql, Program.Connection))
+            try
             {
-                using (var reader = command.ExecuteReader())
+                int All = 0;
+                var sql = $"SELECT SUM({Data})FROM CoffeeSession";
+                using (var command = new NpgsqlCommand(sql, Program.Connection))
                 {
-                    while (reader.Read())
+                    using (var reader = command.ExecuteReader())
                     {
-                        AllWater = Int32.Parse(reader["sum"].ToString());
+                        while (reader.Read())
+                        {
+                            All = Int32.Parse(reader["sum"].ToString());
 
+                        }
                     }
+                    return All;
                 }
-                return AllWater;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Table not found"); return 0;
             }
         }
-        public static int GetWaterThisMonthCoffeeSessions()
+        public static int GetAllSumThisMonthCoffeeSessions(string Data) // Ментод Получения потраченной воды и кофе за месяц
         {
-            int AllWater = 0;
-            var sql = $"select SUM(water) from CoffeeSession where date_part('month', date_session) = date_part('month', now())";
-            using (var command = new NpgsqlCommand(sql, Program.Connection))
+            try
             {
-                using (var reader = command.ExecuteReader())
+                int AllWater = 0;
+                var sql = $"select SUM({Data}) from CoffeeSession where date_part('month', date_session) = date_part('month', now())";
+                using (var command = new NpgsqlCommand(sql, Program.Connection))
                 {
-                    while (reader.Read())
+                    using (var reader = command.ExecuteReader())
                     {
-                        AllWater = Int32.Parse(reader["sum"].ToString());
+                        while (reader.Read())
+                        {
+                            AllWater = Int32.Parse(reader["sum"].ToString());
 
+                        }
                     }
+                    return AllWater;
                 }
-                return AllWater;
             }
-        }
-        public static int GetAllCoffeeBeansCoffeeSessions()
-        {
-            int AllCoffee = 0;
-            var sql = $"SELECT SUM(coffee)FROM CoffeeSession";
-            using (var command = new NpgsqlCommand(sql, Program.Connection))
+            catch (Exception)
             {
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        AllCoffee = Int32.Parse(reader["sum"].ToString());
-
-                    }
-                }
-                return AllCoffee;
+                MessageBox.Show("Table not found"); return 0;
             }
-        }
-        public static int GetCoffeeBeansThisMonthCoffeeSessions()
-        {
-            int AllCoffee = 0;
-            var sql = $"SELECT SUM(coffee)from CoffeeSession where date_part('month', date_session) = date_part('month', now())";
-            using (var command = new NpgsqlCommand(sql, Program.Connection))
-            {
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        AllCoffee = Int32.Parse(reader["sum"].ToString());
 
-                    }
-                }
-                return AllCoffee;
-            }
         }
         public static string GetPopularCoffeeAllTimeCoffeeSessions()
         {
