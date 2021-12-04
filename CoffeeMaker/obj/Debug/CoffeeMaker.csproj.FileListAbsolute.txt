@@ -38,3 +38,15 @@ D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\System.Threa
 D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\System.ValueTuple.xml
 D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\obj\Debug\CoffeeMaker.csproj.CopyComplete
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\DotNetLib.Controls.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Syncfusion.Core.XForms.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Syncfusion.Licensing.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Core.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Platform.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Syncfusion.Core.XForms.xml
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Core.pdb
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Core.xml
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\Progect\Backend\Test task AISA\CoffeeMaker\CoffeeMaker\obj\Debug\XamlC.stamp

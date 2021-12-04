@@ -57,12 +57,16 @@
             this.labelWaterAllTime = new System.Windows.Forms.Label();
             this.labelPopularCofeeAllTime = new System.Windows.Forms.Label();
             this.labelCofeeAllTime = new System.Windows.Forms.Label();
+            this.pictureBoxOnOff = new System.Windows.Forms.PictureBox();
+            this.progressBarWater = new VerticalProgressBar();
+            this.progressBarCofee = new VerticalProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxCoffeeMaker.SuspendLayout();
             this.groupBoxLastCoffe.SuspendLayout();
             this.groupBoxTotalUse.SuspendLayout();
             this.groupBoxInformationMonth.SuspendLayout();
             this.groupBoxIformationAllTime.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOnOff)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -367,12 +371,45 @@
             this.labelCofeeAllTime.TabIndex = 0;
             this.labelCofeeAllTime.Text = "CoffeeAllTime";
             // 
+            // pictureBoxOnOff
+            // 
+            this.pictureBoxOnOff.BackColor = System.Drawing.Color.Black;
+            this.pictureBoxOnOff.Location = new System.Drawing.Point(149, 95);
+            this.pictureBoxOnOff.Name = "pictureBoxOnOff";
+            this.pictureBoxOnOff.Size = new System.Drawing.Size(27, 19);
+            this.pictureBoxOnOff.TabIndex = 13;
+            this.pictureBoxOnOff.TabStop = false;
+            // 
+            // progressBarWater
+            // 
+            this.progressBarWater.Location = new System.Drawing.Point(213, 130);
+            this.progressBarWater.MarqueeAnimationSpeed = 50;
+            this.progressBarWater.Maximum = 3000;
+            this.progressBarWater.Name = "progressBarWater";
+            this.progressBarWater.Size = new System.Drawing.Size(27, 92);
+            this.progressBarWater.TabIndex = 14;
+            // 
+            // progressBarCofee
+            // 
+            this.progressBarCofee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.progressBarCofee.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progressBarCofee.Location = new System.Drawing.Point(85, 130);
+            this.progressBarCofee.MarqueeAnimationSpeed = 50;
+            this.progressBarCofee.Maximum = 500;
+            this.progressBarCofee.Name = "progressBarCofee";
+            this.progressBarCofee.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.progressBarCofee.Size = new System.Drawing.Size(27, 92);
+            this.progressBarCofee.TabIndex = 15;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBarCofee);
+            this.Controls.Add(this.progressBarWater);
+            this.Controls.Add(this.pictureBoxOnOff);
             this.Controls.Add(this.groupBoxIformationAllTime);
             this.Controls.Add(this.groupBoxInformationMonth);
             this.Controls.Add(this.groupBoxTotalUse);
@@ -401,6 +438,7 @@
             this.groupBoxInformationMonth.PerformLayout();
             this.groupBoxIformationAllTime.ResumeLayout(false);
             this.groupBoxIformationAllTime.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOnOff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +474,8 @@
         private System.Windows.Forms.Label labelWaterAllTime;
         private System.Windows.Forms.Label labelPopularCofeeAllTime;
         private System.Windows.Forms.Label labelCofeeAllTime;
+        private System.Windows.Forms.PictureBox pictureBoxOnOff;
+        private System.Windows.Forms.ProgressBar progressBarWater;
+        private System.Windows.Forms.ProgressBar progressBarCofee;
     }
 }

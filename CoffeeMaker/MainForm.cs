@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CoffeeMaker
 {
@@ -14,15 +11,16 @@ namespace CoffeeMaker
     {
         private LogicCoffeMaker logicCoffeMaker;
         private FillCoffee fillCoffee;
+
         public MainForm()
         {
             logicCoffeMaker = new LogicCoffeMaker();
             fillCoffee = new FillCoffee();
             InitializeComponent();
-
             UpdateAll();
             FillCombobox();
             UpdateListBox();
+
         }
 
 
@@ -84,9 +82,9 @@ namespace CoffeeMaker
         {
             if (CoffeeSessionsController.GetPopularCoffeeAllTimeCoffeeSessions() != null)
             {
-                labelPopularCofeeAllTime.Text = Convert.ToString("Popular coffee All Time: "+ CoffeeSessionsController.GetPopularCoffeeAllTimeCoffeeSessions());
+                labelPopularCofeeAllTime.Text = Convert.ToString("Popular coffee All Time: " + CoffeeSessionsController.GetPopularCoffeeAllTimeCoffeeSessions());
             }
-            else 
+            else
             {
                 labelPopularCofeeAllTime.Text = Convert.ToString("You haven't had your coffee");
             }
@@ -104,9 +102,9 @@ namespace CoffeeMaker
         }
         private void UpdatelabelWaterAll()
         {
-            if (CoffeeSessionsController.GetAllWaterCoffeeSessions()!= 0)
+            if (CoffeeSessionsController.GetAllWaterCoffeeSessions() != 0)
             {
-                labelWaterAllTime.Text = Convert.ToString("Total water spent: " + CoffeeSessionsController.GetAllWaterCoffeeSessions()+"ml");
+                labelWaterAllTime.Text = Convert.ToString("Total water spent: " + CoffeeSessionsController.GetAllWaterCoffeeSessions() + "ml");
             }
             else
             {
@@ -128,7 +126,7 @@ namespace CoffeeMaker
         {
             if (CoffeeSessionsController.GetCoffeeBeansThisMonthCoffeeSessions() != 0)
             {
-                labelCoffeeBeansMonth.Text = Convert.ToString("Coffee spent in a month: " + CoffeeSessionsController.GetCoffeeBeansThisMonthCoffeeSessions()+"g");
+                labelCoffeeBeansMonth.Text = Convert.ToString("Coffee spent in a month: " + CoffeeSessionsController.GetCoffeeBeansThisMonthCoffeeSessions() + "g");
             }
             else
             {
@@ -139,7 +137,7 @@ namespace CoffeeMaker
         {
             if (CoffeeSessionsController.GetAllCoffeeBeansCoffeeSessions() != 0)
             {
-                labelCoffeeBeansAllTime.Text = Convert.ToString("Coffee spent all the time: " + CoffeeSessionsController.GetAllCoffeeBeansCoffeeSessions()+"g");
+                labelCoffeeBeansAllTime.Text = Convert.ToString("Coffee spent all the time: " + CoffeeSessionsController.GetAllCoffeeBeansCoffeeSessions() + "g");
             }
             else
             {
@@ -165,10 +163,12 @@ namespace CoffeeMaker
             if (logicCoffeMaker.On == true)
             {
                 groupBoxCoffeeMaker.Text = Convert.ToString("Coffee Maker: On");
+                pictureBoxOnOff.BackColor = Color.Green;
             }
             else
             {
                 groupBoxCoffeeMaker.Text = Convert.ToString("Coffee Maker: Off");
+                pictureBoxOnOff.BackColor = Color.Red;
             }
         }
 
@@ -190,7 +190,17 @@ namespace CoffeeMaker
             UpdatelabelCoffeeBeansMonth();
             UpdatelabelWaterMonth();
             UpdatelabelWaterAll();
+            UpdateProgresBarCoffee();
+            UpdateProgresBarWater();
 
+        }
+        private void UpdateProgresBarCoffee()
+        {
+            progressBarCofee.Value = logicCoffeMaker.Coffee;
+        }
+        private void UpdateProgresBarWater()
+        {
+            progressBarWater.Value = logicCoffeMaker.Water;
         }
         private void FillCombobox()
         {

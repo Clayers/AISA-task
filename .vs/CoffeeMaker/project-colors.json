@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4cbb0973-f099-4904-9979-380f789447ed": {
+      "ProjectGuid": "4cbb0973-f099-4904-9979-380f789447ed",
+      "DisplayName": "CoffeeMaker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
