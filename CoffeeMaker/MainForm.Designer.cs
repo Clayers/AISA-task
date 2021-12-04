@@ -1,4 +1,6 @@
-﻿namespace CoffeeMaker
+﻿using System.Drawing;
+
+namespace CoffeeMaker
 {
     partial class MainForm
     {
@@ -58,8 +60,8 @@
             this.labelPopularCofeeAllTime = new System.Windows.Forms.Label();
             this.labelCofeeAllTime = new System.Windows.Forms.Label();
             this.pictureBoxOnOff = new System.Windows.Forms.PictureBox();
-            this.progressBarWater = new VerticalProgressBar();
-            this.progressBarCofee = new VerticalProgressBar();
+            this.progressBarWater = new CoffeeMaker.VerticalProgressBar();
+            this.progressBarCofee = new CoffeeMaker.VerticalProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxCoffeeMaker.SuspendLayout();
             this.groupBoxLastCoffe.SuspendLayout();
@@ -383,22 +385,22 @@
             // progressBarWater
             // 
             this.progressBarWater.Location = new System.Drawing.Point(213, 130);
-            this.progressBarWater.MarqueeAnimationSpeed = 50;
+            this.progressBarWater.MarqueeAnimationSpeed = 40;
             this.progressBarWater.Maximum = 3000;
             this.progressBarWater.Name = "progressBarWater";
             this.progressBarWater.Size = new System.Drawing.Size(27, 92);
+            this.progressBarWater.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarWater.TabIndex = 14;
             // 
             // progressBarCofee
             // 
-            this.progressBarCofee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.progressBarCofee.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progressBarCofee.ForeColor = System.Drawing.Color.Brown;
             this.progressBarCofee.Location = new System.Drawing.Point(85, 130);
-            this.progressBarCofee.MarqueeAnimationSpeed = 50;
+            this.progressBarCofee.MarqueeAnimationSpeed = 40;
             this.progressBarCofee.Maximum = 500;
             this.progressBarCofee.Name = "progressBarCofee";
-            this.progressBarCofee.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.progressBarCofee.Size = new System.Drawing.Size(27, 92);
+            this.progressBarCofee.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarCofee.TabIndex = 15;
             // 
             // MainForm
@@ -475,7 +477,7 @@
         private System.Windows.Forms.Label labelPopularCofeeAllTime;
         private System.Windows.Forms.Label labelCofeeAllTime;
         private System.Windows.Forms.PictureBox pictureBoxOnOff;
-        private System.Windows.Forms.ProgressBar progressBarWater;
-        private System.Windows.Forms.ProgressBar progressBarCofee;
+        private VerticalProgressBar progressBarWater;
+        private VerticalProgressBar progressBarCofee;
     }
 }
